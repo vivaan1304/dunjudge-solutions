@@ -68,7 +68,7 @@ int binpower(int x,int y,int p){
 
 
 void solve(){
-    
+    cout << "hello\n";
     
    
 
