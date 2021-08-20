@@ -52,7 +52,7 @@ const ll INF = 1e18; // not too close to LLONG_MAX
 
 #define int ll
 const int xd[4] = {1,0,-1,0}, yd[4] = {0,1,0,-1}; // for every grid problem!!
-const int N = 500000+5;
+const int N = 1000000+5;
 int binpower(int x,int y,int p){
     x%=p;
     int res = 1;
@@ -66,19 +66,35 @@ int binpower(int x,int y,int p){
     return res;
 }
 
-
+int n;
+int a[N];
 void solve(){
-    cout << "hello\n";
-    
-   
+    cin >> n;
+   for(int i = 1;i<=n;i++){
+       cin >> a[i];
+   }
+   int ans = 0;
+   for(int i = 1;i<=n;){
+       if(a[i] == -1){
+           i ++;
+           continue;
+       }
+       int s =0;
+       int j = i;
+       while(j <= n && a[j] != -1){
+           s += a[j];
+           j ++;
+       }
+       ans=max(ans,s);
+       i = j;
+   }
 
-
-    
+    cout<<ans<<"\n";
 }
 
 signed main() {
 cin.tie(0)->sync_with_stdio(0);
-
+cout.tie(0);
 // you should actually read the stuff at the bottom
     
    
